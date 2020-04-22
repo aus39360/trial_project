@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    background-color: #ff3f34;
+    color: #ffffff;
+}
+.header-logo {
+    height: 125px;
+    width: 250px;
+    background-image: url(../../img/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header-title {
+    font-size: 42px;
+}
+.header-Form {
+    margin-left: auto;
+}

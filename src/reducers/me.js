@@ -7,7 +7,6 @@ const me = (state = initialValues, action) => {
         /* case USER_LOADING:
             return {...state, loading: true} */
         case USER_LOGIN:
-            console.log(action.payload)
             return {...action.payload}
          default:
             return state

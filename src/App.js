@@ -4,8 +4,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 import './App.css'
-import Form from './Form'
 import CardList from './pages/CardList'
+import Header from './pages/Header'
 import rootReducer from './reducers'
 
 const composeEnhancers =
@@ -27,7 +27,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Form />
+        <Header />
         <CardList />
       </div>
     </Provider>

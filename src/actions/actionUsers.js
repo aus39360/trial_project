@@ -33,6 +33,10 @@ export const addNewUserActionCreator = (data) => {
     }else {
       dispatch(userLoading())
       setTimeout(()=> {
+        let users = localStorage.users
+        users = users ? JSON.parse(users) : []
+        users = [...users, data]
+        localStorage.users = JSON.stringify(users)
         dispatch(addNewUser({...data, id:uuid()}))
         dispatch(userLogin(data))
       }, 1000)

@@ -45,11 +45,11 @@ class CardList extends Component {
         const {name, description, color} = this.state
         const enabled = name.length > 0 && description.length > 0 && color.length > 0
         return(
-            <div>
+            <div className='card-component'>
                 <h1>Films:</h1>
                 {this.props.loading && <div className="lds-ripple"><div></div><div></div></div>}
                 {!this.props.loading && (
-                    <ul>
+                    <ul className='card-list'>
                         {films.map(i => 
                             <li 
                                 key={i.id} 
@@ -64,7 +64,9 @@ class CardList extends Component {
                         )}
                     </ul>
                 )}
-                <form>
+                {!this.props.me.name && <h3>Log in to add a movie!</h3>}
+                {this.props.me.name && (
+                    <form>
                     <input                         
                         type='text'
                         placeholder='name'
@@ -87,6 +89,7 @@ class CardList extends Component {
                         onChange={this.handleChange} 
                     />
                 </form>
+                )}
                 {this.state.isEditing ?
                 <button onClick={this.handleSave} disabled={!enabled}>Save</button> :
                 <button onClick={this.handleClick} disabled={!enabled}>Add film</button>}
@@ -97,7 +100,7 @@ class CardList extends Component {
 
 
 const mapStateToProps = (state)=>{
-    return  { films: state.films.items, loading: state.films.loading, error: state.films.error }
+    return  { films: state.films.items, loading: state.films.loading, error: state.films.error, me: state.me }
 }
 
 const mapDispatchToProps = (dispatch)=> bindActionCreators({addNewCardActionCreator, getAllCardActionCreator, deleteItemActionCreator, editItem}, dispatch)

@@ -1,0 +1,80 @@
+.card {
+    margin: 20px;
+    padding: 25px;
+    border: 2px solid black;
+}
+
+.successful-registration {
+ margin: 0;
+ padding: 40px;
+}
+
+.registration-header {
+  margin: 10px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-input__username {
+  margin-right: 5px;
+}
+
+.registration-input__pass {
+  margin-right: 5px;
+}
+
+.registration-btn {
+  font-size: 18px;
+  border: 2px solid;
+  background: none;
+  margin: 5px;
+  height: 40px;
+  width: 200px;
+  color: #ffff;
+  transition: 0.3s;
+}
+.registration-btn:hover {
+  border-color: #ffff;
+  color: azure;
+  box-shadow: inset 0 0 20px #ffff;
+}
+
+
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #ffff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  
